@@ -20,16 +20,16 @@ int main(int argc, char* argv[]) {
     int xSize = imgSize.x;
     int ySize = imgSize.y;
 
-    double pixelMapper = (10 /(double)255);
     Color actualPixel;
-    int pixelAverage;
+    double pixelMapper = (10 / (double)255);
+    double pixelAverage;
     int pixelInASCII;
 
     for (int i = 0; i < ySize; i++) {
         for (int j = 0; j < xSize; j++) {
 
             actualPixel = img.getPixel(j, i);
-            pixelAverage = (actualPixel.r + actualPixel.g + actualPixel.b) / 3;
+            pixelAverage = (actualPixel.r + actualPixel.g + actualPixel.b) / (double)3;
             pixelInASCII = pixelAverage * pixelMapper;
 
             cout << char(greyScale[pixelInASCII]);
